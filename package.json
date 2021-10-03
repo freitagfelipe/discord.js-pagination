@@ -1,0 +1,22 @@
+{
+  "name": "@freitagfelipe/discord.js-pagination",
+  "version": "1.0.0",
+  "description": "A simple way to send and paginate discord message embeds.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freitagfelipe/discordjs-embed-pagination.git"
+  },
+  "author": "freitagfelipe",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/freitagfelipe/discordjs-embed-pagination/issues"
+  },
+  "homepage": "https://github.com/freitagfelipe/discordjs-embed-pagination#readme"
+}
