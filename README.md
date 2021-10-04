@@ -25,11 +25,12 @@ const pages = [
     pageOne,
     ...,
     pageN
-]
+];
 
 // Message and pages arguments are required
-// emojiList default is equal to ['⏪', '⏩']
 // timeout default is equal to 60000
+// emojiList default is equal to ['⏪', '⏩']
+// OnlyAuthorCanReact default is equal to false
 // endPage default is equal to undefined, but if you want the message to change after the timeout you can pass an embed in endPage
 
-pagination(message, pages, emojiList, timeout, endPage);
+pagination(message, pages, timeout, emojiList, onlyAuthorCanReact, endPage);
