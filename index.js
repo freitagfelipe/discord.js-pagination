@@ -1,5 +1,5 @@
-const pagination = async (msg, pages, emojiList = ['⏪', '⏩'], timeout = 60000, endPage = undefined) => {
-	if (!msg && !msg.channel) {
+const pagination = async (message, pages, timeout = 60000, emojiList = ['⏪', '⏩'], onlyAuthorCanReact = false, endPage = undefined) => {
+	if (!message && !message.channel) {
 		throw new Error('Is not possible send a message in this channel.');
 	} else if (!pages) {
 		throw new Error('.');
@@ -8,7 +8,7 @@ const pagination = async (msg, pages, emojiList = ['⏪', '⏩'], timeout = 6000
 	}
 	
 	let page = 0;
-	const currentPage = await msg.channel.send({ embeds: [pages[page].setFooter(`Page ${page + 1} / ${pages.length}`)] });
+	const currentPage = await message.channel.send({ embeds: [pages[page].setFooter(`Page ${page + 1} / ${pages.length}`)] });
 
 	if (pages.length > 1) {
 		for (const emoji of emojiList) {
@@ -23,7 +23,7 @@ const pagination = async (msg, pages, emojiList = ['⏪', '⏩'], timeout = 6000
 			reaction.users.remove(user);
 		}
 
-		if(user.id != msg.author.id) {
+		if(onlyAuthorCanReact && user.id != message.author.id) {
 			return;
 		}
 
@@ -46,10 +46,8 @@ const pagination = async (msg, pages, emojiList = ['⏪', '⏩'], timeout = 6000
 	reactionCollector.on('end', () => {
 		if (!currentPage.deleted) {
 			if(endPage) {
-				currentPage.edit({embeds: [endPage]});
+				currentPage.edit({ embeds: [endPage] });
 			}
-	
-			currentPage.reactions.removeAll()
 		}
 	});
 
