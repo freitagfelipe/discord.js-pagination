@@ -19,11 +19,13 @@ const pagination = async (message, pages, timeout = 60000, emojiList = ['⏪', '
 	const reactionCollector = currentPage.createReactionCollector({ time: timeout });
 
 	reactionCollector.on('collect', (reaction, user) => {
-		if(!user.bot) {
+		if(user.id !== message.client.user.id) {
 			reaction.users.remove(user);
 		}
 
-		if(onlyAuthorCanReact && user.id != message.author.id) {
+		if (user.bot) {
+			return;
+		} else if(onlyAuthorCanReact && user.id != message.author.id) {
 			return;
 		}
 
@@ -49,6 +51,8 @@ const pagination = async (message, pages, timeout = 60000, emojiList = ['⏪', '
 				currentPage.edit({ embeds: [endPage] });
 			}
 		}
+
+		currentPage.reactions.removeAll();
 	});
 
 	return currentPage;
