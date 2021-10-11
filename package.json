@@ -1,6 +1,6 @@
 {
   "name": "@freitagfelipe/discord.js-pagination",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple way to send and paginate discord message embeds.",
   "main": "index.js",
   "scripts": {
