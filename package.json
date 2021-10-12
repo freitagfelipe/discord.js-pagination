@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freitagfelipe/discordjs-embed-pagination.git"
+    "url": "git+https://github.com/freitagfelipe/discord.js-pagination.git"
   },
   "author": "freitagfelipe",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/freitagfelipe/discordjs-embed-pagination/issues"
+    "url": "https://github.com/freitagfelipe/discord.js-pagination/issues"
   },
-  "homepage": "https://github.com/freitagfelipe/discordjs-embed-pagination#readme"
+  "homepage": "https://github.com/freitagfelipe/discord.js-pagination#readme"
 }
