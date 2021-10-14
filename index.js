@@ -46,8 +46,8 @@ const pagination = async (message, pages, timeout = 60000, emojiList = ['⏪', '
 	});
 
 	reactionCollector.on('end', () => {
-		if (!currentPage.deleted) {
-			if(endPage) {
+		if (!currentPage.reactions.message.deleted) {
+			if (endPage) {
 				currentPage.edit({ embeds: [endPage] });
 			}
 
