@@ -50,9 +50,9 @@ const pagination = async (message, pages, timeout = 60000, emojiList = ['⏪', '
 			if(endPage) {
 				currentPage.edit({ embeds: [endPage] });
 			}
-		}
 
-		currentPage.reactions.removeAll();
+			currentPage.reactions.removeAll();
+		}
 	});
 
 	return currentPage;
