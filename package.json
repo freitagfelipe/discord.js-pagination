@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/freitagfelipe/discord.js-pagination.git"
   },
+  "keywords": [
+    "discord.js",
+    "pagination"
+  ],
   "author": "freitagfelipe",
   "license": "MIT",
   "publishConfig": {
